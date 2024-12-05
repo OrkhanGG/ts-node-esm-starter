@@ -9,3 +9,13 @@ const anExampleObject: anExampleInterface = {
 };
 console.log(anExampleObject);
 console.log("The typescript code has been executed successfully!");
+
+export const handler = async (event: any) => {
+    console.log(event);
+    // TODO implement test 1
+    const response = {
+        statusCode: 200,
+        body: JSON.stringify('Hello from a TypeScript-generated Lambda function!'),
+    };
+    return response;
+};

@@ -1,13 +1,22 @@
 {
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node ./dist/index.js",
+    "build": "rollup -c rollup.config.mjs && node cleanup-dist.mjs",
+    "start": "node ./dist/index.mjs",
     "dev": "node --import ./loader.mjs src/index.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^10.9.2"
+  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.1",
     "@types/node": "^22.5.5",
+    "archiver": "^7.0.1",
+    "rollup": "^4.28.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   }
